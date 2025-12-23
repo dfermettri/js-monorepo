@@ -54,7 +54,7 @@ function getWordCount(sentence) {
     return 0;
   }
   
-  const words = sentence.trim().split(/\s+/);
+  const words = sentence.trim().split(/\s+/); 
   return words.length;
 }
 
