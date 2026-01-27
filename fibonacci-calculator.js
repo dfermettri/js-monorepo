@@ -4,13 +4,12 @@ function sumFibs (num) {
   let currentNum = 1;
 
   while (currentNum <= num) {
-    if (currentNum % 2 === 0) {
+    if (currentNum % 2 !== 0) {
         result += currentNum;
     }
-    else {
-      previousNum += result;
-      currentNum += previousNum;
-    }
+    let nextNum = currentNum + previousNum;
+    previousNum = currentNum;
+    currentNum = nextNum;
   }
   return result;
 }
