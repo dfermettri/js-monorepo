@@ -1,11 +1,12 @@
 function destroyer (arr, ...arg) {
     let filtredArr = arr
     .filter(function(el) {
-        if (arg.includes(!el)) {
+        if (!arg.includes(el)) {
             return true;
         }
         else return false;
     });
+    return filtredArr;
 }
 
 console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3))
