@@ -1,11 +1,9 @@
-function streamrollArray (arr) {
+function steamrollArray (arr) {
     let result = [];
-    for (let index = 0; arr.length >= index; index++) {
+    for (let index = 0; arr.length > index; index++) {
         let element = arr[index];
         if (Array.isArray(element)) {
-            for (let elementInElement = 0; element.lenght >= elementInElement; elementsInElement++) {
-                result.push(elementInElement)
-            }
+            result = result.concat(steamrollArray(element))
         }
 
         else {
@@ -17,6 +15,6 @@ function streamrollArray (arr) {
 }
 
 
-console.log(streamrollArray ([[1], [], [2, [3]]]));
-console.log(streamrollArray ([1, {"foo": "bar"}, [2]]));
-console.log(streamrollArray (["baz", [1, 2], {}]));
+console.log(steamrollArray ([[1], [], [2, [3]]]));
+console.log(steamrollArray ([1, {"foo": "bar"}, [2]]));
+console.log(steamrollArray (["baz", [1, 2], {}]));
